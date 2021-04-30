@@ -15,7 +15,7 @@ aws lookoutvision create-project --project-name circuitboard
 
 # capsule
 
-wget ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/capsule.tar.xz
+curl ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/capsule.tar.xz -o capsule.tar.xz
 tar -xf capsule.tar.xz
 rm capsule.tar.xz 
 aws s3 cp --recursive capsule/train/good/ s3://lookout-$SUFIX/capsule/normal/
@@ -26,7 +26,7 @@ aws lookoutvision create-project --project-name capsule
 
 # hazelnut
 
-wget ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/hazelnut.tar.xz
+curl ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/hazelnut.tar.xz -o hazelnut.tar.xz
 tar -xf hazelnut.tar.xz
 rm hazelnut.tar.xz
 aws s3 cp --recursive hazelnut/train/good/ s3://lookout-$SUFIX/hazelnut/normal/
@@ -37,7 +37,7 @@ aws lookoutvision create-project --project-name hazelnut
 
 # metal nut
 
-wget ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/metal_nut.tar.xz
+curl ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/metal_nut.tar.xz -o metal_nut.tar.xz
 tar -xf metal_nut.tar.xz
 rm metal_nut.tar.xz
 aws s3 cp --recursive metal_nut/train/good/ s3://lookout-$SUFIX/metal_nut/normal/
@@ -48,7 +48,7 @@ aws lookoutvision create-project --project-name metal_nut
 
 # pill
 
-wget ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/pill.tar.xz
+curl ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/pill.tar.xz -o pill.tar.xz
 tar -xf pill.tar.xz
 rm pill.tar.xz
 aws s3 cp --recursive pill/train/good/ s3://lookout-$SUFIX/pill/normal/
@@ -59,7 +59,7 @@ aws lookoutvision create-project --project-name pill
 
 # screw
 
-wget ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/screw.tar.xz
+curl ftp://guest:GU.205dldo@ftp.softronics.ch/mvtec_anomaly_detection/screw.tar.xz -o screw.tar.xz
 tar -xf screw.tar.xz
 rm screw.tar.xz
 aws s3 cp --recursive screw/train/good/ s3://lookout-$SUFIX/screw/normal/
