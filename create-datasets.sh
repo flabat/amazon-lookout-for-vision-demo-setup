@@ -4,7 +4,9 @@ set -e
 
 SUFIX=$(LC_ALL=C tr -dc 'a-z' </dev/urandom | head -c 6 ; echo)
 
-aws s3 mb s3://lookout-$SUFIX
+aws s3 mb s3://lookout-vision-$SUFIX
+
+echo bucket="s3://lookout-vision-$SUFIX" >> output.txt
 
 # cicruitboard
 
