@@ -6,11 +6,14 @@ SUFIX=$(LC_ALL=C tr -dc 'a-z' </dev/urandom | head -c 6 ; echo)
 
 aws s3 mb s3://lookout-vision-$SUFIX
 
+sudo yum install ImageMagick -y
+
 echo bucket="s3://lookout-vision-$SUFIX" >> output.txt
 
 # cicruitboard
 
 git clone --depth 1 https://github.com/aws-samples/amazon-lookout-for-vision
+find amazon-lookout-for-vision/circuitboard/ -name '*.jpg' -exec mogrify -resize 50%\> {} \;
 aws s3 cp --recursive amazon-lookout-for-vision/circuitboard s3://lookout-$SUFIX/circuitboard
 rm -rf amazon-lookout-for-vision/
 aws lookoutvision create-project --project-name circuitboard
